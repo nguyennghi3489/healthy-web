@@ -1,11 +1,10 @@
 import './App.css';
-import {ReactComponent as ReactLogo} from './components/icons/logo.svg';
-
+import { Header } from './components/header';
 function App() {
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
-        <ReactLogo />
         <p>
           トップページサムネイル用パーツ
         </p>

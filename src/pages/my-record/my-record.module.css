@@ -1,0 +1,10 @@
+.body {
+  width: var(--max-width);
+  margin: 0 auto;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-14) auto;
+}

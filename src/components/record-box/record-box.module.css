@@ -1,0 +1,40 @@
+.wrapper {
+  border: var(--spacing-6) solid var(--color-primary-300);
+  width: 240px;
+  height: 240px;
+  display: flex;
+  background-color: #000000;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 160% auto;
+  flex: 1;
+  mix-blend-mode: luminosity;
+  opacity: 0.5;
+}
+
+.contentContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: var(--color-primary-300);
+  font-size: var(--font-xxxlg);
+  margin-bottom: var(--spacing-2);
+}
+
+.description {
+  background-color: var(--color-primary-400);
+  padding: var(--spacing-1) 0;
+}

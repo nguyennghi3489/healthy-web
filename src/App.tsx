@@ -2,6 +2,7 @@ import "./App.css";
 import { BackToTopButton } from "./components/back-to-top-button";
 import { Button } from "./components/button";
 import { Header } from "./components/header";
+import { RecordBox } from "./components/record-box";
 import { Thumbnail } from "./components/thumbnail";
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
       <Button>自分の日記をもっと見る</Button>
       <BackToTopButton />
       <Thumbnail url="images/m01.jpg" text="Hello World" />
+      <RecordBox
+        url="images/MyRecommend-1.jpg"
+        title="BODY RECORD"
+        description="自分のカラダの記録"
+      />
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.wrapper {
+  padding: var(--spacing-14) 0;
+  background-color: var(--color-dark-500);
+}
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: var(--color-light);
+}
+
+.list {
+  display: flex;
+  gap: var(--spacing-11);
+  font-size: var(--font-xxxs);
+}

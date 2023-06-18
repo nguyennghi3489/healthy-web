@@ -2,6 +2,7 @@ import "./App.css";
 import { Article } from "./components/article";
 import { BackToTopButton } from "./components/back-to-top-button";
 import { Button } from "./components/button";
+import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { RecordBox } from "./components/record-box";
 import { Thumbnail } from "./components/thumbnail";
@@ -21,6 +22,7 @@ function App() {
         description="自分のカラダの記録"
       />
       <Article url="images/m01.jpg" text="Hello World" />
+      <Footer />
     </div>
   );
 }

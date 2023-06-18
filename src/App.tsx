@@ -1,4 +1,5 @@
 import "./App.css";
+import { Article } from "./components/article";
 import { BackToTopButton } from "./components/back-to-top-button";
 import { Button } from "./components/button";
 import { Header } from "./components/header";
@@ -19,6 +20,7 @@ function App() {
         title="BODY RECORD"
         description="自分のカラダの記録"
       />
+      <Article url="images/m01.jpg" text="Hello World" />
     </div>
   );
 }

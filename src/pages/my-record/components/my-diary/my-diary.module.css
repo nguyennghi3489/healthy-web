@@ -1,0 +1,28 @@
+.heading {
+  font-size: var(--font-xxlg);
+  font-family: "Inter";
+  margin-bottom: var(--spacing-2);
+}
+.list {
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--spacing-3);
+  margin: 0 auto;
+  margin-bottom: var(--spacing-6);
+}
+.item {
+  border: 2px solid var(--color-gray-300);
+  padding: var(--spacing-4);
+}
+
+.time {
+  width: 100px;
+  margin-bottom: var(--spacing-2);
+  font-family: "Inter";
+  font-size: var(--font-lg);
+}
+
+.description {
+  font-size: var(--font-xxs);
+}

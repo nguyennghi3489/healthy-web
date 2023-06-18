@@ -8,3 +8,17 @@
   justify-content: space-between;
   margin: var(--spacing-14) auto;
 }
+
+.myExcercise {
+  margin-bottom: var(--spacing-14);
+}
+
+.myDiary {
+  margin-bottom: var(--spacing-14);
+}
+
+.viewMore {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-16);
+}

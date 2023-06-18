@@ -1,5 +1,8 @@
+import { Button } from "../../components/button";
+import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
 import { RecordBox } from "../../components/record-box";
+import { MyDiary } from "./components/my-diary";
 import { MyExercise } from "./components/my-exercise";
 import styles from "./my-record.module.css";
 
@@ -28,10 +31,19 @@ export const MyRecord = () => {
 
         <div>Body Record</div>
 
-        <div>
+        <div className={styles.myExcercise}>
           <MyExercise />
         </div>
+
+        <div className={styles.myDiary}>
+          <MyDiary />
+        </div>
+
+        <div className={styles.viewMore}>
+          <Button>記録をもっと見る</Button>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

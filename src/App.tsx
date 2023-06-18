@@ -1,4 +1,5 @@
 import "./App.css";
+import { BackToTopButton } from "./components/back-to-top-button";
 import { Button } from "./components/button";
 import { Header } from "./components/header";
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <p>トップページサムネイル用パーツ</p>
       </header>
       <Button>自分の日記をもっと見る</Button>
+      <BackToTopButton />
     </div>
   );
 }

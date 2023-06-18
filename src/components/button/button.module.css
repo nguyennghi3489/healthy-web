@@ -1,0 +1,10 @@
+.container {
+  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+  color: var(--color-light);
+  outline: none;
+  border: 0;
+  font-size: var(--font-lg);
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: var(--spacing-2);
+  cursor: pointer;
+}

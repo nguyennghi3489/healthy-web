@@ -6,7 +6,7 @@ import { MyDiary } from "./components/my-diary";
 import { MyExercise } from "./components/my-exercise";
 import styles from "./my-record.module.css";
 
-export const MyRecord = () => {
+export const MyRecordPage = () => {
   return (
     <div>
       <Header />

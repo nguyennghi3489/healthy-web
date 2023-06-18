@@ -2,21 +2,21 @@ import styles from "./article.module.css";
 
 interface IThumbnail {
   url: string;
-  text: string;
+  title: string;
+  date: string;
+  tags: string;
 }
 
-export const Article = ({ url, text }: IThumbnail) => {
+export const Article = ({ url, date, title, tags }: IThumbnail) => {
   return (
     <div className={styles.container}>
       <div className={styles.imagePart}>
         <img src={url} alt="" className={styles.image} />
-        <p className={styles.description}>{text}</p>
+        <p className={styles.description}>{date}</p>
       </div>
       <div className={styles.content}>
-        <h3 className={styles.title}>
-          魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…
-        </h3>
-        <p className={styles.tags}>#魚料理 #和食 #DHA</p>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.tags}>{tags}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { Thumbnail } from "../../components/thumbnail";
 import { Footer } from "../../components/footer";
 import { Button } from "../../components/button";
 
-export const Dashboard = () => {
+export const DashboardPage = () => {
   return (
     <div>
       <Header />

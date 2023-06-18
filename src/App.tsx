@@ -21,7 +21,6 @@ function App() {
         title="BODY RECORD"
         description="自分のカラダの記録"
       />
-      <Article url="images/m01.jpg" text="Hello World" />
       <Footer />
     </div>
   );

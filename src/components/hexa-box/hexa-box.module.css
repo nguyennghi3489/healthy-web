@@ -1,0 +1,13 @@
+.container {
+  background: url("/public/images/hexagon.svg") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  height: 116px;
+  width: 134px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-1);
+  color: var(--color-light);
+}

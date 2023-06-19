@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Article } from "../../components/article";
 import { Button } from "../../components/button";
-import { Footer } from "../../components/footer";
-import { Header } from "../../components/header";
 import styles from "./article.module.css";
 import { RecommendBox } from "./components/recommend-box";
 import { IArticleModel } from "../../models/article";

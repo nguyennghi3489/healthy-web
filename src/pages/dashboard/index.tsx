@@ -1,10 +1,8 @@
-import { Header } from "../../components/header";
 import { HexaBox } from "../../components/hexa-box";
 import { ReactComponent as KnifeIcon } from "../../components/icons/knife.svg";
 import { ReactComponent as CupIcon } from "../../components/icons/cup.svg";
 import styles from "./dashboard.module.css";
 import { Thumbnail } from "../../components/thumbnail";
-import { Footer } from "../../components/footer";
 import { Button } from "../../components/button";
 import { Charts } from "./components/charts";
 import { useEffect, useState } from "react";

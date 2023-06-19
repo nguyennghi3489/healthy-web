@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  position: relative;
 }
 
 .backToTopWrapper {
@@ -9,6 +10,7 @@
 
 .button {
   position: fixed;
-  bottom: 0;
   right: var(--spacing-24);
+  bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-24);
 }

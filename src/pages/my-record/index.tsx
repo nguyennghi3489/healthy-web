@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../components/button";
-import { Footer } from "../../components/footer";
-import { Header } from "../../components/header";
 import { RecordBox } from "../../components/record-box";
 import { BodyRecord } from "./components/body-record";
 import { MyDiary } from "./components/my-diary";

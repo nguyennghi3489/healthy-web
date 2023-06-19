@@ -20,6 +20,13 @@
   color: var(--color-primary-300);
 }
 
+.transparent {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 0;
+}
+
 .active {
   color: var(--color-light);
   background-color: var(--color-primary-300);

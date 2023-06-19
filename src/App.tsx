@@ -1,27 +1,17 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Article } from "./components/article";
-import { BackToTopButton } from "./components/back-to-top-button";
-import { Button } from "./components/button";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
-import { RecordBox } from "./components/record-box";
-import { Thumbnail } from "./components/thumbnail";
+import { DashboardPage } from "./pages/dashboard";
+import { MyRecordPage } from "./pages/my-record";
+import { ArticlesPage } from "./pages/articles";
+
 function App() {
   return (
     <div className="App">
-      <Header />
-      <header className="App-header">
-        <p>トップページサムネイル用パーツ</p>
-      </header>
-      <Button>自分の日記をもっと見る</Button>
-      <BackToTopButton />
-      <Thumbnail url="images/m01.jpg" text="Hello World" />
-      <RecordBox
-        url="images/MyRecommend-1.jpg"
-        title="BODY RECORD"
-        description="自分のカラダの記録"
-      />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="my-record" element={<MyRecordPage />} />
+        <Route path="articles" element={<ArticlesPage />} />
+      </Routes>
     </div>
   );
 }

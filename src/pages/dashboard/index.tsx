@@ -51,7 +51,7 @@ export const DashboardPage = () => {
       </div>
 
       <div className={styles.viewMore}>
-        <Button>記録をもっと見る</Button>
+        <Button type="large">記録をもっと見る</Button>
       </div>
       <Footer />
     </div>

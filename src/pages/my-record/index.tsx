@@ -2,6 +2,7 @@ import { Button } from "../../components/button";
 import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
 import { RecordBox } from "../../components/record-box";
+import { BodyRecord } from "./components/body-record";
 import { MyDiary } from "./components/my-diary";
 import { MyExercise } from "./components/my-exercise";
 import styles from "./my-record.module.css";
@@ -29,7 +30,9 @@ export const MyRecordPage = () => {
           />
         </div>
 
-        <div>Body Record</div>
+        <div className={styles.bodyRecord}>
+          <BodyRecord />
+        </div>
 
         <div className={styles.myExcercise}>
           <MyExercise />
@@ -40,7 +43,7 @@ export const MyRecordPage = () => {
         </div>
 
         <div className={styles.viewMore}>
-          <Button>記録をもっと見る</Button>
+          <Button type="large">記録をもっと見る</Button>
         </div>
       </div>
       <Footer />

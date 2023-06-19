@@ -5,13 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ArticlesPage } from "./pages/articles";
 import { DashboardPage } from "./pages/dashboard";
+import { MyRecordPage } from "./pages/my-record";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <DashboardPage />
+    <MyRecordPage />
   </React.StrictMode>
 );
 

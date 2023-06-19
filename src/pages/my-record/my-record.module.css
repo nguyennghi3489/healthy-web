@@ -9,6 +9,10 @@
   margin: var(--spacing-14) auto;
 }
 
+.bodyRecord {
+  margin-bottom: var(--spacing-14);
+}
+
 .myExcercise {
   margin-bottom: var(--spacing-14);
 }

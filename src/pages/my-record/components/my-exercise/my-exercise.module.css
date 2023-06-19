@@ -50,6 +50,7 @@
 .calo,
 .duration {
   color: var(--color-primary-300);
+  text-align: left;
 }
 
 .duration {

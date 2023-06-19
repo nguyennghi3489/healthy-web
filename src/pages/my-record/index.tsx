@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Button } from "../../components/button";
 import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
@@ -6,8 +7,46 @@ import { BodyRecord } from "./components/body-record";
 import { MyDiary } from "./components/my-diary";
 import { MyExercise } from "./components/my-exercise";
 import styles from "./my-record.module.css";
+import { IBodyFatRecordsModel } from "../../models/body-fat";
+import {
+  getBodyFatRecordsInfo,
+  getDiaryList,
+  getExcerciseInfo,
+} from "../../apis/my-record";
+import { IExcerciseModel } from "../../models/excercise";
+import { IDiaryModel } from "../../models/diary";
 
 export const MyRecordPage = () => {
+  const [bodyRecords, setBodyRecords] = useState<
+    IBodyFatRecordsModel | undefined
+  >(undefined);
+  const [exercises, setExercises] = useState<IExcerciseModel[]>([]);
+  const [diary, setDiary] = useState<IDiaryModel[]>([]);
+
+  useEffect(() => {
+    const fetchBodyRecords = async () => {
+      const data = await getBodyFatRecordsInfo();
+      setBodyRecords(data);
+    };
+    fetchBodyRecords();
+  });
+
+  useEffect(() => {
+    const fetchExcercises = async () => {
+      const data = await getExcerciseInfo();
+      setExercises(data);
+    };
+    fetchExcercises();
+  });
+
+  useEffect(() => {
+    const fetchDiary = async () => {
+      const data = await getDiaryList();
+      setDiary(data);
+    };
+    fetchDiary();
+  });
+
   return (
     <div>
       <Header />
@@ -31,15 +70,15 @@ export const MyRecordPage = () => {
         </div>
 
         <div className={styles.bodyRecord}>
-          <BodyRecord />
+          {bodyRecords && <BodyRecord bodyRecords={bodyRecords} />}
         </div>
 
         <div className={styles.myExcercise}>
-          <MyExercise />
+          <MyExercise exercises={exercises} />
         </div>
 
         <div className={styles.myDiary}>
-          <MyDiary />
+          <MyDiary diary={diary} />
         </div>
 
         <div className={styles.viewMore}>

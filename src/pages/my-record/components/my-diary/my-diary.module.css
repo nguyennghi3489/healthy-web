@@ -2,6 +2,7 @@
   font-size: var(--font-xxlg);
   font-family: "Inter";
   margin-bottom: var(--spacing-2);
+  text-align: left;
 }
 
 .list {
@@ -23,8 +24,10 @@
   margin-bottom: var(--spacing-2);
   font-family: "Inter";
   font-size: var(--font-lg);
+  text-align: left;
 }
 
 .description {
   font-size: var(--font-xxs);
+  text-align: left;
 }

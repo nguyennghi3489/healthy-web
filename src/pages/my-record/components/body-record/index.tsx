@@ -7,72 +7,41 @@ import {
 } from "recharts";
 import styles from "./body-record.module.css";
 import { Button } from "../../../../components/button";
+import {
+  IBodyFatModel,
+  IBodyFatRecordsModel,
+  RecordType,
+} from "../../../../models/body-fat";
+import { useState } from "react";
 
-const data = [
-  {
-    name: "6月",
-    val1: 40,
-    val2: 24,
-  },
-  {
-    name: "7月",
-    val1: 60,
-    val2: 11,
-  },
-  {
-    name: "8月",
-    val1: 10,
-    val2: 24,
-  },
-  {
-    name: "9月",
-    val1: 45,
-    val2: 32,
-  },
-  {
-    name: "10月",
-    val1: 140,
-    val2: 52,
-  },
-  {
-    name: "11月",
-    val1: 100,
-    val2: 32,
-  },
-  {
-    name: "12月",
-    val1: 90,
-    val2: 32,
-  },
-  {
-    name: "1月",
-    val1: 120,
-    val2: 51,
-  },
-  {
-    name: "2月",
-    val1: 85,
-    val2: 12,
-  },
-  {
-    name: "3月",
-    val1: 40,
-    val2: 59,
-  },
-  {
-    name: "4月",
-    val1: 31,
-    val2: 124,
-  },
+interface IBodyRecord {
+  bodyRecords: IBodyFatRecordsModel;
+}
+export const BodyRecord = ({ bodyRecords }: IBodyRecord) => {
+  const [data, setData] = useState<IBodyFatModel[]>(bodyRecords.day);
+  const [type, setType] = useState<RecordType>("day");
+  const { day, week, month, year } = bodyRecords;
+  const pickBodyRecordData = (type: "day" | "week" | "month" | "year") => {
+    switch (type) {
+      case "day":
+        setData(day);
+        setType("day");
+        break;
+      case "week":
+        setData(week);
+        setType("week");
+        break;
+      case "month":
+        setType("month");
+        setData(month);
+        break;
+      default:
+        setType("year");
+        setData(year);
+        break;
+    }
+  };
 
-  {
-    name: "5月",
-    val1: 60,
-    val2: 14,
-  },
-];
-
-export const BodyRecord = () => {
   return (
     <div className={styles.chartBox}>
       <div className={styles.infoArea}>
@@ -121,10 +90,30 @@ export const BodyRecord = () => {
       </ResponsiveContainer>
 
       <div className={styles.filterGroup}>
-        <Button>日</Button>
-        <Button>週</Button>
-        <Button>月</Button>
-        <Button active>年</Button>
+        <Button
+          onClick={() => pickBodyRecordData("day")}
+          active={type === "day"}
+        >
+          日
+        </Button>
+        <Button
+          onClick={() => pickBodyRecordData("week")}
+          active={type === "week"}
+        >
+          週
+        </Button>
+        <Button
+          onClick={() => pickBodyRecordData("month")}
+          active={type === "month"}
+        >
+          月
+        </Button>
+        <Button
+          onClick={() => pickBodyRecordData("year")}
+          active={type === "year"}
+        >
+          年
+        </Button>
       </div>
     </div>
   );

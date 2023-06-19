@@ -1,21 +1,9 @@
 .chartsWrapper {
   width: 100%;
   background-color: var(--color-dark-600);
+  margin-bottom: var(--spacing-6);
 }
 
-.charts {
-  max-width: 1280px;
-  display: flex;
-  height: 312px;
-  margin: 0 auto;
-}
-.circleChart {
-  flex: 1;
-}
-
-.lineChart {
-  flex: 1;
-}
 .category {
   display: flex;
   flex-direction: row;

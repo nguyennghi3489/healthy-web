@@ -1,6 +1,24 @@
-.container{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-2);
-    padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-2) 
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) var(--spacing-2);
+}
+
+.icon {
+  position: relative;
+}
+
+.badge {
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary-500);
+  border-radius: 8px;
+  font-size: var(--font-xxxxs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: calc(-1 * var(--spacing-2));
+  top: 0;
 }

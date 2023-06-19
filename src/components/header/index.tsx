@@ -20,7 +20,7 @@ export const Header = () => {
               <MenuItem icon={ChallengeIcon} text="チャレンジ" />
             </li>
             <li>
-              <MenuItem icon={InfoIcon} text="お知らせ" />
+              <MenuItem icon={InfoIcon} text="お知らせ" badge="1" />
             </li>
           </ul>
           <MenuIcon />

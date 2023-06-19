@@ -20,43 +20,39 @@ export const ArticlesPage = () => {
   });
 
   return (
-    <div>
-      <Header />
-      <div className={styles.body}>
-        <div className={styles.category}>
-          <RecommendBox title="RECOMMENDED COLUMN" description="オススメ" />
-          <RecommendBox
-            title="RECOMMENDED
+    <div className={styles.body}>
+      <div className={styles.category}>
+        <RecommendBox title="RECOMMENDED COLUMN" description="オススメ" />
+        <RecommendBox
+          title="RECOMMENDED
 DIET"
-            description="ダイエット"
-          />
-          <RecommendBox
-            title="RECOMMENDED
+          description="ダイエット"
+        />
+        <RecommendBox
+          title="RECOMMENDED
 BEAUTY"
-            description="美容"
-          />
-          <RecommendBox
-            title="RECOMMENDED
+          description="美容"
+        />
+        <RecommendBox
+          title="RECOMMENDED
 HEALTH"
-            description="健康"
-          />
-        </div>
-        <div className={styles.articles}>
-          {articles.map((item: IArticleModel) => (
-            <Article
-              key={item.id}
-              url={item.url}
-              title={item.title}
-              date={item.date}
-              tags={item.tags.join(" ")}
-            />
-          ))}
-        </div>
-        <div className={styles.viewMore}>
-          <Button type="large">記録をもっと見る</Button>
-        </div>
+          description="健康"
+        />
       </div>
-      <Footer />
+      <div className={styles.articles}>
+        {articles.map((item: IArticleModel) => (
+          <Article
+            key={item.id}
+            url={item.url}
+            title={item.title}
+            date={item.date}
+            tags={item.tags.join(" ")}
+          />
+        ))}
+      </div>
+      <div className={styles.viewMore}>
+        <Button type="large">記録をもっと見る</Button>
+      </div>
     </div>
   );
 };

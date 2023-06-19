@@ -54,7 +54,6 @@ export const DashboardPage = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.chartsWrapper}>
         <Charts achievement={achievement} bodyFatInfo={bodyFatInfo} />
       </div>
@@ -78,7 +77,6 @@ export const DashboardPage = () => {
       <div className={styles.viewMore}>
         <Button type="large">記録をもっと見る</Button>
       </div>
-      <Footer />
     </div>
   );
 };

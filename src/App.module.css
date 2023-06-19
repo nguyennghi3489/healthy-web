@@ -1,0 +1,14 @@
+.app {
+  text-align: center;
+}
+
+.backToTopWrapper {
+  width: var(--max-width);
+  margin: 0 auto;
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  right: var(--spacing-24);
+}

@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, CartesianGrid } from "recharts";
 import styles from "./dashboard-chart.module.css";
+import { IBodyFatModel } from "../../../../../models/body-fat";
 
 const data = [
   {
@@ -65,13 +66,17 @@ const data = [
   },
 ];
 
-export const DashboardChart = () => {
+interface IBodyFathart {
+  bodyFatInfo: IBodyFatModel[];
+}
+
+export const BodyFathart = ({ bodyFatInfo }: IBodyFathart) => {
   return (
     <div className={styles.chartBox}>
       <LineChart
         width={680}
         height={300}
-        data={data}
+        data={bodyFatInfo}
         margin={{
           top: 12,
           left: 60,
@@ -85,7 +90,7 @@ export const DashboardChart = () => {
           fill="#2E2E2E"
           strokeDasharray="3 0"
         />
-        <XAxis dataKey="name" stroke="#FFF" axisLine={false} tickLine={false} />
+        <XAxis dataKey="date" stroke="#FFF" axisLine={false} tickLine={false} />
         <Line
           type="monotone"
           dataKey="val1"

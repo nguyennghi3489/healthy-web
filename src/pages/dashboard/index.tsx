@@ -7,13 +7,56 @@ import { Thumbnail } from "../../components/thumbnail";
 import { Footer } from "../../components/footer";
 import { Button } from "../../components/button";
 import { Charts } from "./components/charts";
+import { useEffect, useState } from "react";
+import {
+  getAchievementInfo,
+  getBodyFatInfo,
+  getMealHistory,
+} from "../../apis/dashboard";
+import { IAchievementModel } from "../../models/achievement";
+import { IBodyFatModel } from "../../models/body-fat";
+import { IMealModel } from "../../models/meal";
 
 export const DashboardPage = () => {
+  const [achievement, setAchievement] = useState<IAchievementModel | undefined>(
+    undefined
+  );
+  const [bodyFatInfo, setBodyFatInfo] = useState<IBodyFatModel[] | undefined>(
+    undefined
+  );
+  const [mealHistory, setMealHistory] = useState<IMealModel[] | undefined>(
+    undefined
+  );
+
+  useEffect(() => {
+    const fetchAchievement = async () => {
+      const data = await getAchievementInfo();
+      setAchievement(data);
+    };
+    fetchAchievement();
+  });
+
+  useEffect(() => {
+    const fetchBodyFatInfo = async () => {
+      const data = await getBodyFatInfo();
+      setBodyFatInfo(data);
+    };
+    fetchBodyFatInfo();
+  });
+
+  useEffect(() => {
+    const fetchMealHistory = async () => {
+      const data = await getMealHistory();
+      setMealHistory(data);
+    };
+    fetchMealHistory();
+  });
+
   return (
     <div>
       <Header />
       <div className={styles.chartsWrapper}>
-        <Charts />
+        <Charts achievement={achievement} bodyFatInfo={bodyFatInfo} />
       </div>
 
       <div className={styles.category}>
@@ -24,30 +67,12 @@ export const DashboardPage = () => {
       </div>
 
       <div className={styles.meals}>
-        <div className={styles.meal}>
-          <Thumbnail text="05.21.Morning" url="/images/m01.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.21.Snack" url="/images/l01.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.21.Lunch" url="/images/l03.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.21.Dinner" url="/images/d01.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.20.Morning" url="/images/m01.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.20.Lunch" url="/images/l02.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.20.Dinner" url="/images/d02.jpg" />
-        </div>
-        <div className={styles.meal}>
-          <Thumbnail text="05.20.Snack" url="/images/s01.jpg" />
-        </div>
+        {mealHistory &&
+          mealHistory.map((item) => (
+            <div key={item.id} className={styles.meal}>
+              <Thumbnail type={item.type} date={item.date} url={item.url} />
+            </div>
+          ))}
       </div>
 
       <div className={styles.viewMore}>

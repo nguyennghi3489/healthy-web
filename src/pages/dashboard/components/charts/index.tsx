@@ -1,14 +1,20 @@
+import { IAchievementModel } from "../../../../models/achievement";
+import { IBodyFatModel } from "../../../../models/body-fat";
 import styles from "./charts.module.css";
-import { DashboardChart } from "./dashboard-chart";
+import { BodyFathart } from "./dashboard-chart";
 import { ProgressBox } from "./progress-box";
 
-export const Charts = () => (
+interface ICharts {
+  achievement?: IAchievementModel;
+  bodyFatInfo?: IBodyFatModel[];
+}
+export const Charts = ({ achievement, bodyFatInfo }: ICharts) => (
   <div className={styles.charts}>
     <div className={styles.circleChart}>
-      <ProgressBox />
+      {achievement && <ProgressBox achievement={achievement} />}
     </div>
     <div className={styles.lineChart}>
-      <DashboardChart />
+      {bodyFatInfo && <BodyFathart bodyFatInfo={bodyFatInfo} />}
     </div>
   </div>
 );

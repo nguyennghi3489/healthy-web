@@ -1,13 +1,19 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import styles from "./progress-box.module.css";
+import { IAchievementModel } from "../../../../../models/achievement";
 
-export const ProgressBox = () => {
+interface IProgressBox {
+  achievement: IAchievementModel;
+}
+
+export const ProgressBox = ({ achievement }: IProgressBox) => {
+  const { date, url, percentage } = achievement;
   return (
     <div className={styles.container}>
-      <img className={styles.image} src="/images/d01.jpg" alt="" />
+      <img className={styles.image} src={url} alt="" />
       <CircularProgressbar
-        value={75}
+        value={percentage}
         text={""}
         strokeWidth={2}
         className={styles.progressBar}
@@ -19,8 +25,8 @@ export const ProgressBox = () => {
         })}
       />
       <div className={styles.texts}>
-        <div className={styles.date}>05/21</div>
-        <div className={styles.percentage}>75%</div>
+        <div className={styles.date}>{date}</div>
+        <div className={styles.percentage}>{percentage}%</div>
       </div>
     </div>
   );

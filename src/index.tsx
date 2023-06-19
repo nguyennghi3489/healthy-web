@@ -4,13 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ArticlesPage } from "./pages/articles";
+import { DashboardPage } from "./pages/dashboard";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ArticlesPage />
+    <DashboardPage />
   </React.StrictMode>
 );
 

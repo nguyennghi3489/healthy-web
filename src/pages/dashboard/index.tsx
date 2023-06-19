@@ -6,12 +6,24 @@ import styles from "./dashboard.module.css";
 import { Thumbnail } from "../../components/thumbnail";
 import { Footer } from "../../components/footer";
 import { Button } from "../../components/button";
+import { ProgressBox } from "./components/progress-box";
+import { DashboardChart } from "./components/dashboard-chart";
 
 export const DashboardPage = () => {
   return (
     <div>
       <Header />
-      {/* <InfoArea></InfoArea> */}
+      <div className={styles.chartsWrapper}>
+        <div className={styles.charts}>
+          <div className={styles.circleChart}>
+            <ProgressBox />
+          </div>
+          <div className={styles.lineChart}>
+            <DashboardChart />
+          </div>
+        </div>
+      </div>
+
       <div className={styles.category}>
         <HexaBox icon={KnifeIcon} text="Morning" />
         <HexaBox icon={KnifeIcon} text="Lunch" />
